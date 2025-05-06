@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Usuarios</title>
+  <!-- Asegurarnos de que la librería de Supabase se carga antes de usarla -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <h1>Usuarios Registrados</h1>
+  <ul id="lista-usuarios"></ul>
+
+  <script>
+    const SUPABASE_URL = 'https://zsdkbdnsjxyalenuexze.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpzZGtiZG5zanh5YWxlbnVleHplIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQ0Njg0NDUsImV4cCI6MjA2MDA0NDQ0NX0.mouBfvsmyIUSzZS_0XXdEaglwxHyfQq4rQLKW_-fkek';
+
+    // Asegurarnos de que supabase esté inicializado correctamente
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    async function obtenerUsuarios() {
+      const { data, error } = await supabaseClient
+        .from('users')
+        .select('id, email, created_at')
+        .order('created_at', { ascending: false });
+
+      if (error) {
+        console.error('Error al obtener usuarios:', error);
+        return;
+      }
+
+      const lista = document.getElementById('lista-usuarios');
+      lista.innerHTML = '';
+      data.forEach(usuario => {
+        const li = document.createElement('li');
+        li.textContent = `ID: ${usuario.id} | Email: ${usuario.email} | Fecha: ${new Date(usuario.created_at).toLocaleString()}`;
+        lista.appendChild(li);
+      });
+    }
+
+    obtenerUsuarios();
+  </script>
+</body>
+</html>

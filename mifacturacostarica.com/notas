@@ -1,0 +1,25 @@
+
+------------------------------------------------------------------------
+-las notas de credito, anulas las facturas
+y para anular una nota de credito se usa una nota debito.
+------------------------------------------------------------------------
+-DIMEX: (2 DIGITOS) Son cedulas de personas extrangeras que estan viviendo en costa Rica, con documentos acá
+-NITE:(10 DIGITOS) Cedula de personas extrangeras domicialidas en costa rica , buscando una nacionalidad.
+-CEDULA JURIDICA (10 DIGITOS)
+-CEDULA FISICA (9 DIGITOS)
+
+
+*que pasa si una persona que no tiene actividades economicas, no se le puede hacer factura electro.
+en ese caso se hace un tiquete electronico.
+por, porque el tiquete electronico no requiere que lleve el nombre del cliente.
+
+la factura documento legal que se utiliza para credito fiscal.
+que es el credito fiscal: es la parte que yo logro hacer, (recuperar un parte del 13%, pero ya no estoy perdiendo el 13% que pague en la compra.)
+
+Patente: xxxxxxxxx
+
+las facturas pendientes se deben reenviar, para que quede en estado aceptado o rechazado.
+y si es rechazado se tiene que hacer nota de credito para anular la factura.
+-el error 401 el token no aprobo, tendre que volver a sacar otra Yave para pruebas.
+
+credito fiscal:

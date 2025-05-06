@@ -1,0 +1,24 @@
+Datos de Usuario
+Su usuario para envío de XML es:
+ 	cpf-01-1260-0730@stag.comprobanteselectronicos.go.cr
+
+Su contraseña para envío de XML es:
+ 	I+}f8)#0?^$)8x/haopU
+
+== STAGING / SANDBOX (PRUEBAS)==
+
+URL API RECEPCION = https://api-sandbox.comprobanteselectronicos.go.cr/recepcion/v1/recepcion/
+
+OAUTH 2.0 ACCESS TOKEN URL = https://idp.comprobanteselectronicos.go.cr/auth/realms/rut-stag/protocol/openid-connect/token
+
+CLIENT ID = api-stag
+
+CLIENT SECRET = [VACIO]
+
+SCOPE = [VACIO]
+
+Recuerde que debe seleccionar y copiar el usuario y contraseña que se generó y pegarlo en un formado como por ejemplo Word o Bloc de notas,
+para su uso habitual a la hora de enviar los archivos XML firmados al Ministerio de Hacienda.
+
+Nota: Si su sistema operativo es Windows, utilice el comando Ctrl + C para copiar el texto seleccionado y para pegar la opción Ctrl + V.
+Estos comandos varían según el sistema operativo (Mac OS o Linux)

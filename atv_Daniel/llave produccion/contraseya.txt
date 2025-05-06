@@ -1,0 +1,18 @@
+Datos de Usuario
+Su usuario para envío de XML es:
+ 	cpf-01-1260-0730@prod.comprobanteselectronicos.go.cr
+
+Su contraseña para envío de XML es:
+ 	}k)S+16+8j|BYu1-;SE-
+
+== PRODUCCION ==
+
+URL API RECEPCION = https://api.comprobanteselectronicos.go.cr/recepcion/v1/
+
+OAUTH 2.0 ACCESS TOKEN URL = https://idp.comprobanteselectronicos.go.cr/auth/realms/rut/protocol/openid-connect/token
+
+CLIENT ID = api-prod
+
+CLIENT SECRET = [VACIO]
+
+SCOPE = [VACIO]

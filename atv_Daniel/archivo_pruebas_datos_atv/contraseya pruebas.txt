@@ -3,7 +3,7 @@ Su usuario para envío de XML es:
  	cpf-01-1260-0730@stag.comprobanteselectronicos.go.cr
 
 Su contraseña para envío de XML es:
- 	I+}f8)#0?^$)8x/haopU
+ 	1-CZbuCa#s!+=cFJ=o_s
 
 == STAGING / SANDBOX (PRUEBAS)==
 

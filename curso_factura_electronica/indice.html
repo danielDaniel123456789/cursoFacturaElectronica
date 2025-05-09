@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Curso de Factura Electrónica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container my-5">
+    <h1 class="text-center mb-4">📘 Curso de Factura Electrónica</h1>
+    <h3 class="text-center text-muted mb-5">Ministerio de Hacienda - Costa Rica</h3>
+
+    <div class="accordion" id="indiceCurso">
+      
+      <!-- Módulo 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="modulo1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#contenido1" aria-expanded="true">
+            Módulo 1: Introducción a la Factura Electrónica
+          </button>
+        </h2>
+        <div id="contenido1" class="accordion-collapse collapse show" data-bs-parent="#indiceCurso">
+          <div class="accordion-body">
+            <ul>
+              <li>¿Qué es la factura electrónica?</li>
+              <li>Marco legal en Costa Rica</li>
+              <li>Obligados a utilizar factura electrónica</li>
+              <li>Ventajas y beneficios del sistema electrónico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Módulo 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="modulo2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contenido2">
+            Módulo 2: Requisitos Previos
+          </button>
+        </h2>
+        <div id="contenido2" class="accordion-collapse collapse" data-bs-parent="#indiceCurso">
+          <div class="accordion-body">
+            <ul>
+              <li>Inscripción en ATV</li>
+              <li>Firma digital vs. certificados criptográficos</li>
+              <li>Consideraciones técnicas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Puedes seguir este mismo formato para los otros módulos... -->
+
+      <!-- Módulo 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="modulo3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#contenido3">
+            Módulo 3: Estructura de la Factura Electrónica
+          </button>
+        </h2>
+        <div id="contenido3" class="accordion-collapse collapse" data-bs-parent="#indiceCurso">
+          <div class="accordion-body">
+            <ul>
+              <li>Tipos de comprobantes electrónicos</li>
+              <li>Campos obligatorios y XML</li>
+              <li>Código de actividad y claves numéricas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agrega los módulos restantes aquí si lo deseas -->
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

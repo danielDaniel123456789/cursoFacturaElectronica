@@ -1,0 +1,74 @@
+📘 Curso de Factura Electrónica - Ministerio de Hacienda de Costa Rica
+Módulo 1: Introducción a la Factura Electrónica
+¿Qué es la factura electrónica?
+
+Marco legal en Costa Rica
+
+Obligados a utilizar factura electrónica
+
+Ventajas y beneficios del sistema electrónico
+
+Módulo 2: Requisitos Previos
+Inscripción en ATV (Administración Tributaria Virtual)
+
+Firma digital vs. certificados de firma criptográfica
+
+Consideraciones técnicas (Internet, software, navegador)
+
+Módulo 3: Estructura de la Factura Electrónica
+Tipos de comprobantes electrónicos (Factura, Tiquete, Nota de crédito/débito)
+
+Campos obligatorios y estructura XML
+
+Código de actividad y claves numéricas
+
+Módulo 4: Proceso de Emisión
+Generación del comprobante electrónico
+
+Firma digital del XML
+
+Envío al Ministerio de Hacienda
+
+Validación y respuesta del sistema
+
+Envío al cliente
+
+Módulo 5: Herramientas para Emitir Factura Electrónica
+Software gratuito del Ministerio de Hacienda (Facturador gratuito)
+
+Sistemas privados autorizados
+
+Comparación entre opciones (ventajas y desventajas)
+
+Módulo 6: Manejo de Errores y Rechazos
+Tipos de errores comunes
+
+Cómo corregir y reenviar una factura rechazada
+
+Buenas prácticas para evitar errores
+
+Módulo 7: Obligaciones del Contribuyente
+Plazos para emitir y enviar
+
+Almacenamiento de comprobantes
+
+Declaración del IVA y conciliación con las facturas
+
+Módulo 8: Casos Prácticos y Simulaciones
+Ejemplo paso a paso con el facturador gratuito
+
+Simulación de facturación en un software externo
+
+Emisión de notas de crédito/débito
+
+Módulo 9: Actualizaciones y Cambios Normativos
+Cambios recientes en la legislación
+
+Futuras mejoras y nuevos comprobantes (ej. Factura electrónica de exportación)
+
+Módulo 10: Evaluación Final y Certificación
+Prueba teórica
+
+Ejercicio práctico
+
+Certificado de participación

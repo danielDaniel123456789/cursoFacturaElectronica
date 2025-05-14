@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Buscar Códigos CABYS</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    input[type="file"], input[type="text"] {
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+    }
+    table {
+      border-collapse: collapse;
+      margin-top: 20px;
+      width: 100%;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Buscador de Código CABYS</h2>
+
+<label>Cargar archivo CABYS (.csv):</label><br>
+<input type="file" id="csvFile" accept=".csv"><br>
+
+<label>Buscar descripción (ej: fisioterapeuta):</label><br>
+<input type="text" id="buscar" placeholder="Ingrese palabra clave...">
+
+<div id="resultados"></div>
+
+<script>
+  let datosCABYS = [];
+
+  document.getElementById('csvFile').addEventListener('change', function (e) {
+    const archivo = e.target.files[0];
+    if (!archivo) return;
+
+    const lector = new FileReader();
+    lector.onload = function (evento) {
+      const texto = evento.target.result;
+      const lineas = texto.split(/\r?\n/);
+      datosCABYS = lineas
+        .map(l => l.split(';'))
+        .filter(f => f.length >= 2 && f[0].match(/^\d+$/)); // Solo líneas válidas con código
+
+      alert("Archivo CABYS cargado correctamente.");
+    };
+    lector.readAsText(archivo, 'utf-8');
+  });
+
+  document.getElementById('buscar').addEventListener('input', function () {
+    const texto = this.value.toLowerCase();
+    const resultados = datosCABYS.filter(([codigo, descripcion]) =>
+      descripcion.toLowerCase().includes(texto)
+    );
+
+    let html = '';
+    if (resultados.length > 0) {
+      html += `<table>
+        <tr><th>Código CABYS</th><th>Descripción</th></tr>`;
+      resultados.slice(0, 50).forEach(([codigo, descripcion]) => {
+        html += `<tr><td>${codigo}</td><td>${descripcion}</td></tr>`;
+      });
+      html += `</table>`;
+    } else {
+      html = `<p>No se encontraron coincidencias.</p>`;
+    }
+
+    document.getElementById('resultados').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>

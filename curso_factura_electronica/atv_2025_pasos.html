@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Secciones de la Factura Electrónica</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container py-5">
+  <h2 class="mb-4 text-center">Secciones para Crear una Factura Electrónica</h2>
+
+  <div class="accordion" id="seccionesFactura">
+
+    <!-- Sección 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado1">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+          1. Encabezado
+        </button>
+      </h2>
+      <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Tipo de comprobante: Factura Electrónica.</li>
+            <li>Fecha de emisión.</li>
+            <li>Condición de la venta: Contado o Crédito.</li>
+            <li>Plazo crédito: si aplica.</li>
+            <li>Medio de pago: Efectivo, Tarjeta, etc.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 2 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado2">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+          2. Datos del emisor
+        </button>
+      </h2>
+      <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Nombre o razón social.</li>
+            <li>Cédula, dirección fiscal.</li>
+            <li>Teléfono, correo electrónico.</li>
+            <li>Actividad económica (CABYS).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 3 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado3">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+          3. Datos del receptor (cliente)
+        </button>
+      </h2>
+      <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Tipo y número de identificación.</li>
+            <li>Nombre o razón social.</li>
+            <li>Correo electrónico, teléfono, dirección.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 4 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado4">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+          4. Datos encabezado factura
+        </button>
+      </h2>
+      <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Moneda y tipo de cambio.</li>
+            <li>Condición de venta y plazo crédito.</li>
+            <li>Forma de pago.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 5 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado5">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+          5. Datos detalle factura
+        </button>
+      </h2>
+      <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Código CABYS.</li>
+            <li>Unidad de medida, cantidad.</li>
+            <li>Descripción, precio unitario.</li>
+            <li>Descuento, subtotal, IVA, total línea.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 6 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado6">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+          6. Impuestos y exoneraciones
+        </button>
+      </h2>
+      <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>IVA 13% por defecto.</li>
+            <li>Marcar exoneración si aplica.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 7 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado7">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7">
+          7. Detalle de líneas facturadas
+        </button>
+      </h2>
+      <div id="collapse7" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Revisar, corregir, eliminar o agregar líneas.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 8 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado8">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8">
+          8. Otros cargos (opcional)
+        </button>
+      </h2>
+      <div id="collapse8" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Cargos adicionales como flete u otros.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 9 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado9">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9">
+          9. Documentos de referencia (opcional)
+        </button>
+      </h2>
+      <div id="collapse9" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Solo para notas de crédito, débito o refacturación.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 10 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado10">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10">
+          10. Otro (observaciones)
+        </button>
+      </h2>
+      <div id="collapse10" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Comentarios como “Servicio según contrato 001-2025”.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sección 11 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="encabezado11">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11">
+          11. Enviar XML firmado
+        </button>
+      </h2>
+      <div id="collapse11" class="accordion-collapse collapse" data-bs-parent="#seccionesFactura">
+        <div class="accordion-body">
+          <ul>
+            <li>Confirmar envío del comprobante.</li>
+            <li>El sistema genera y firma el XML.</li>
+            <li>Envía a Hacienda y al cliente por correo.</li>
+            <li>Descargar y guardar XML y PDF.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

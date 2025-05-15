@@ -1,0 +1,111 @@
+Pasos para Crear una Factura Electrónica en el sistema ATV de Hacienda Costa Rica
+1. Ingresar al sistema
+Entrá a https://facturaelectronica.hacienda.go.cr
+
+Iniciá sesión con tu usuario y contraseña (ATV).
+
+Seleccioná la opción Factura Electrónica.
+
+2. Crear nuevo comprobante
+Hacé clic en Crear comprobante o similar.
+
+Elegí el tipo de comprobante: Factura Electrónica (FE).
+
+3. Completar el formulario con las 11 secciones
+3.1 Encabezado
+Tipo de comprobante: Factura Electrónica (se autoselecciona).
+
+Fecha de emisión: Automática, o podés cambiarla.
+
+Condición de la venta: Elegí “Contado” o “Crédito”.
+
+Plazo crédito: Solo si elegís crédito (ej. 30 días).
+
+Medio de pago: Efectivo, Tarjeta, Transferencia, etc.
+
+3.2 Datos del emisor
+Ya vienen cargados, revisá que estén correctos:
+
+Nombre o razón social.
+
+Cédula.
+
+Dirección fiscal.
+
+Teléfono, correo electrónico.
+
+Actividad económica (CABYS).
+
+3.3 Datos del receptor (cliente)
+Tipo de identificación (Física, Jurídica, DIMEX, NITE).
+
+Número de identificación.
+
+Nombre completo o razón social.
+
+Correo electrónico (para envío de factura).
+
+Teléfono (opcional).
+
+Dirección (opcional).
+
+3.4 Datos encabezado factura
+Seleccioná moneda: CRC (colones) u otra.
+
+Tipo de cambio: Automático si no usás moneda extranjera.
+
+Condición de venta: Contado o crédito.
+
+Plazo crédito si aplica.
+
+Forma de pago.
+
+3.5 Datos detalle factura
+Agregá cada producto o servicio que vendés:
+
+Código CABYS (ej. 83141 para consultoría informática).
+
+Unidad de medida (Unidad).
+
+Cantidad (Ej. 1).
+
+Descripción del servicio o producto.
+
+Precio unitario sin IVA.
+
+Descuento si aplica.
+
+El sistema calcula subtotal, IVA, total línea.
+
+3.6 Impuestos y exoneraciones
+Por defecto IVA 13%.
+
+Si cliente está exonerado, marcar exoneración.
+
+3.7 Detalle de líneas facturadas
+Revisá y corregí líneas, eliminá o agregá más si es necesario.
+
+3.8 Otros cargos (opcional)
+Agregá cargos adicionales si correspondiera (flete, etc.).
+
+3.9 Documentos de referencia (opcional)
+Solo para notas de crédito, débito o refacturación.
+
+Si es factura normal, dejá en blanco.
+
+3.10 Otro (observaciones)
+Comentarios adicionales (ejemplo: “Servicio según contrato 001-2025”).
+
+3.11 Enviar XML firmado
+Confirmá envío del comprobante.
+
+El sistema genera el XML, lo firma digitalmente y lo envía a Hacienda y al cliente por correo.
+
+Descargá y guardá el XML y PDF para tus registros.
+
+4. Confirmar y descargar factura
+Verificá que el comprobante fue aceptado.
+
+Descargá el archivo PDF para entregar o archivar.
+
+Podés reenviar la factura por correo si el cliente no la recibió.

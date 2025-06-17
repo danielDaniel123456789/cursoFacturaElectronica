@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Factura <?= $numero ?></title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; border: 1px solid #ddd; padding: 20px; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .columns { display: flex; justify-content: space-between; margin-bottom: 30px; }
+        .column { width: 48%; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .totals { margin-left: auto; width: 300px; }
+        .qr-container { text-align: center; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>FACTURA ELECTRÓNICA</h1>
+            <h2>No. <?= $numero ?></h2>
+        </div>
+        
+        <div class="columns">
+            <div class="column">
+                <h3>Emisor</h3>
+                <p><?= $emisor['nombre'] ?></p>
+                <p>ID: <?= $emisor['identificacion'] ?></p>
+                <p><?= $emisor['ubicacion'] ?></p>
+            </div>
+            
+            <div class="column">
+                <h3>Receptor</h3>
+                <p><?= $receptor['nombre'] ?></p>
+                <p>ID: <?= $receptor['identificacion'] ?></p>
+            </div>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Impuesto</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($detalles as $item): ?>
+                <tr>
+                    <td><?= $item['descripcion'] ?></td>
+                    <td>₡<?= number_format($item['monto'], 2) ?></td>
+                    <td><?= $item['impuesto'] ?>%</td>
+                    <td>₡<?= number_format($item['monto'] * (1 + $item['impuesto']/100), 2) ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+        
+        <div class="totals">
+            <p><strong>Subtotal:</strong> ₡<?= number_format($totales['subtotal'], 2) ?></p>
+            <p><strong>Impuestos:</strong> ₡<?= number_format($totales['impuestos'], 2) ?></p>
+            <p><strong>Total:</strong> ₡<?= number_format($totales['total'], 2) ?></p>
+        </div>
+        
+        <div class="qr-container">
+            <img src="<?= $qr ?>" alt="Código QR de validación" width="150">
+            <p>Clave: <?= $clave ?></p>
+        </div>
+    </div>
+</body>
+</html>

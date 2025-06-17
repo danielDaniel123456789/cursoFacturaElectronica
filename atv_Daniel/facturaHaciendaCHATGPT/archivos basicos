@@ -1,12 +1,15 @@
-Archivos básicos para Factura Electrónica con Hacienda (Costa Rica)
-Archivo	Función / Contenido principal
-config.php	Parámetros de configuración: datos del emisor, credenciales API Hacienda, rutas a certificados, URLs, etc.
-index.html	Formulario HTML para que el usuario ingrese datos del cliente y factura.
-procesar_factura.php	Recibe datos del formulario, valida, obtiene token, genera consecutivo y clave numérica, y llama funciones para generar y firmar XML, y enviar a Hacienda.
-generar_xml.php	Funciones para generar el XML de la factura con la estructura que exige Hacienda, usando los datos del cliente y factura.
-firmar_xml.php	Función para firmar digitalmente el XML con el certificado .p12 usando xmlsec o openssl.
-enviar_xml.php	Función que envía el XML firmado al Web Service de Hacienda usando el token obtenido.
-consecutivo.php	Función para manejar el consecutivo de facturas (obtener, incrementar, guardar), para evitar duplicados.
-.p12	Archivo certificado digital para firmar las facturas (no se sube al repositorio).
-.key (opcional)	Clave privada, si es necesaria para el proceso (depende de la implementación).
-README.md	Documentación básica sobre cómo configurar y usar el sistema.
+| **Archivo**               | **Función / Contenido Principal**                                                                                                                                                                                              |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `config.php`              | Contiene todos los parámetros de configuración: <br>– Datos del emisor <br>– Credenciales de acceso a Hacienda <br>– Rutas a archivos `.p12` <br>– URLs de los servicios                                                       |
+| `index.html`              | Formulario HTML donde el usuario puede ingresar los datos del cliente y los detalles de la factura.                                                                                                                            |
+| `procesar_factura.php`    | Script principal que orquesta el proceso:<br>– Recibe datos del formulario<br>– Valida información<br>– Obtiene token de Hacienda<br>– Genera consecutivo y clave<br>– Llama a funciones de generación, firma y envío del XML. |
+| `generar_xml.php`         | Genera el XML con la estructura oficial de Hacienda, usando los datos del cliente y productos/servicios.                                                                                                                       |
+| `firmar_xml.php`          | Firma digitalmente el XML utilizando el certificado `.p12`. Puedes usar `xmlsec`, `openssl` o una librería PHP adecuada.                                                                                                       |
+| `enviar_xml.php`          | Envía el XML firmado al Web Service de Hacienda (`recepcion`) usando el token de acceso. También puede guardar el `key` o `clave` para seguimiento.                                                                            |
+| `consultar_estado.php`    | Consulta el estado de la factura en Hacienda usando la **clave numérica** y el **token de autorización**. Devuelve si fue **aceptada, rechazada o con error**.                                                                 |
+| `consecutivo.php`         | Maneja el consecutivo de facturas electrónicas (clave numérica y secuencial): <br>– Crea, incrementa y guarda el número actual para evitar duplicados.                                                                         |
+| `consulta_facturas.php`   | Script backend que consulta a Hacienda las facturas registradas, usando token de autorización y la API de consulta.                                                                                                           |
+| `facturasRegistradas.html`| Página HTML con formulario para ingresar token y mostrar las facturas registradas consultadas desde Hacienda mediante `consulta_facturas.php`.                                                                                |
+| `certificado.p12`         | Certificado digital necesario para firmar las facturas. **(Este archivo es privado y no debe subirse a ningún repositorio público)**.                                                                                          |
+| `.key` (opcional)         | Archivo de clave privada, si tu método de firma lo requiere por separado.                                                                                                                                                      |
+| `README.md`               | Documentación del sistema: requisitos, pasos de instalación, uso básico, estructura de carpetas y buenas prácticas.                                                                                                            |

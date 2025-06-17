@@ -1,7 +1,8 @@
 <?php
 // src/cliente_api_hacienda.php - Cliente para API de Hacienda Costa Rica
 require_once __DIR__ . '/configuracion.php';
-
+require_once __DIR__ . '/src/helpers.php';
+require_once __DIR__ . '/src/cliente_api_hacienda.php';
 /**
  * Envía una factura firmada a la API de Hacienda
  * @param string $xmlFirmadoPath Ruta del archivo XML firmado

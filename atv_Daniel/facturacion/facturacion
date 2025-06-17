@@ -1,0 +1,23 @@
+/facturacion
+│
+├── /certificados          # Carpeta para almacenar certificados (debe estar en .gitignore)
+│   ├── certificado.p12
+│   └── clave_privada.key  # Opcional
+│
+├── /templates             # Plantillas HTML/CSS
+│   ├── index.html
+│   └── facturasRegistradas.html
+│
+├── /includes              # Funcionalidades principales
+│   ├── config.php
+│   ├── consecutivo.php
+│   ├── generar_xml.php
+│   ├── firmar_xml.php
+│   ├── enviar_xml.php
+│   ├── consultar_estado.php
+│   └── consulta_facturas.php
+│
+├── /logs                  # Registros de operaciones
+│
+├── procesar_factura.php   # Punto de entrada principal
+└── README.md

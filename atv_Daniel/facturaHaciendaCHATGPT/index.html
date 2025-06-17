@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Factura Electrónica</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 2em auto; }
+    input, select, button { display: block; width: 100%; margin: 1em 0; padding: 0.5em; }
+    label { margin-top: 1em; font-weight: bold; }
+    #resultado { 
+      white-space: pre-wrap; 
+      background: #eee; 
+      padding: 1em; 
+      border-radius: 6px;
+      min-height: 2em;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Generar Factura Electrónica</h1>
+
+  <form id="formFactura">
+    <label for="nombre">Nombre del Cliente</label>
+    <input id="nombre" type="text" name="nombre" value="Laura Méndez" required>
+
+    <label for="cedula">Cédula</label>
+    <input id="cedula" type="text" name="cedula" value="112170973" required pattern="\d{9}" title="Debe contener 9 dígitos numéricos">
+
+    <label for="correo">Correo</label>
+    <input id="correo" type="email" name="correo" value="lauramendez84@gmail.com" required>
+
+    <label for="detalle">Descripción del Servicio</label>
+    <input id="detalle" type="text" name="detalle" value="Servicios de programas informáticos (software) en línea, n.c.p." required>
+
+    <label for="cabys">Código CABYS</label>
+    <input id="cabys" type="text" name="cabys" value="8439200000000" required pattern="\d{13}" title="Debe contener 13 dígitos numéricos">
+
+    <label for="monto">Precio del Servicio (sin IVA)</label>
+    <input id="monto" type="number" name="monto" value="1" required min="0.01" step="0.01">
+
+    <button type="submit" id="btnEnviar">Enviar Factura</button>
+  </form>
+
+  <div id="resultado" aria-live="polite"></div>
+
+  <script>
+    const form = document.getElementById("formFactura");
+    const btnEnviar = document.getElementById("btnEnviar");
+    const resultado = document.getElementById("resultado");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      // Validación extra JS para monto (solo números positivos)
+      const monto = parseFloat(form.monto.value);
+      if (isNaN(monto) || monto <= 0) {
+        resultado.innerText = "Ingrese un monto válido mayor que 0";
+        return;
+      }
+
+      btnEnviar.disabled = true;
+      resultado.innerText = "Procesando...";
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch("procesar_factura.php", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!response.ok) throw new Error("Error en la respuesta del servidor");
+
+        const text = await response.text();
+        resultado.innerText = text;
+      } catch (err) {
+        resultado.innerText = "Error al enviar la factura: " + err.message;
+      } finally {
+        btnEnviar.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>

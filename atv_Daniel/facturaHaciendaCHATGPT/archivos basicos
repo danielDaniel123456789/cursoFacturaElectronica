@@ -1,0 +1,12 @@
+Archivos básicos para Factura Electrónica con Hacienda (Costa Rica)
+Archivo	Función / Contenido principal
+config.php	Parámetros de configuración: datos del emisor, credenciales API Hacienda, rutas a certificados, URLs, etc.
+index.html	Formulario HTML para que el usuario ingrese datos del cliente y factura.
+procesar_factura.php	Recibe datos del formulario, valida, obtiene token, genera consecutivo y clave numérica, y llama funciones para generar y firmar XML, y enviar a Hacienda.
+generar_xml.php	Funciones para generar el XML de la factura con la estructura que exige Hacienda, usando los datos del cliente y factura.
+firmar_xml.php	Función para firmar digitalmente el XML con el certificado .p12 usando xmlsec o openssl.
+enviar_xml.php	Función que envía el XML firmado al Web Service de Hacienda usando el token obtenido.
+consecutivo.php	Función para manejar el consecutivo de facturas (obtener, incrementar, guardar), para evitar duplicados.
+.p12	Archivo certificado digital para firmar las facturas (no se sube al repositorio).
+.key (opcional)	Clave privada, si es necesaria para el proceso (depende de la implementación).
+README.md	Documentación básica sobre cómo configurar y usar el sistema.
